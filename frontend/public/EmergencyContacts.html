@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Contacts</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f9ff;
+      color: #233345;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .contact-card {
+      width: 100%;
+      max-width: 450px;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #005b7a;
+      margin-bottom: 1.2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0.8rem 0;
+      padding: 0.8rem 1rem;
+      background: #eaf9ff;
+      border-left: 4px solid #00bcd4;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    li:hover {
+      background: #d2f4ff;
+    }
+
+    li span {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #223;
+    }
+
+    li a {
+      font-size: 1.1rem;
+      color: #0077cc;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #0077cc;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    li a:hover {
+      background: #0077cc;
+      color: white;
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 500px) {
+      li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      li a {
+        margin-top: 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-card">
+    <h3>🚨 Emergency Contacts</h3>
+    <ul>
+      <li>
+        <span>👮 Police</span>
+        <a href="tel:100">Call 100</a>
+      </li>
+      <li>
+        <span>🚑 Ambulance</span>
+        <a href="tel:102">Call 102</a>
+      </li>
+      <li>
+        <span>🔥 Fire</span>
+        <a href="tel:101">Call 101</a>
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>

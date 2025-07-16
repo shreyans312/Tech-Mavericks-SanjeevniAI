@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Healthcare Resources</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f9ff;
+      color: #233345;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .resource-section {
+      background: linear-gradient(120deg, #e0f7fa 0%, #ffffff 100%);
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(21, 70, 141, 0.12);
+      max-width: 540px;
+      width: 100%;
+      transition: box-shadow 0.3s;
+    }
+    .resource-section:hover {
+      box-shadow: 0 12px 32px rgba(21, 70, 141, 0.17);
+    }
+
+    h2 {
+      color: #0077b6;
+      font-size: 2.2rem;
+      margin-bottom: 1.7rem;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 129, 167, 0.10);
+    }
+
+    .resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .resource-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1rem 1rem 0.5rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.14s, box-shadow 0.14s, background 0.2s;
+      cursor: pointer;
+      min-height: 64px;
+      opacity: 0.96;
+    }
+    .resource-item:hover, .resource-item:focus {
+      background: #e3f6f5;
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 4px 18px rgba(0,129,167,0.1);
+      opacity: 1;
+    }
+
+    .resource-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      margin-right: 1.25rem;
+      background: #f0f9ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 1px 3px rgba(27, 76, 119, 0.12);
+      transition: background 0.18s;
+    }
+    .resource-item:hover .resource-icon {
+      background: #caf0f8;
+    }
+
+    .resource-link, .resource-link:visited {
+      color: #0093ad;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.18rem;
+      transition: color 0.17s;
+    }
+    .resource-link:hover, .resource-link:focus {
+      color: #244878;
+      text-decoration: underline;
+    }
+
+    .resource-label {
+      color: #233345;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-left: 0.10rem;
+    }
+
+    @media (max-width: 600px) {
+      .resource-section {
+        padding: 1.3rem 0.5rem;
+        max-width: 97vw;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .resource-item {
+        min-height: 52px;
+      }
+      .resource-icon {
+        font-size: 1.6rem;
+        margin-right: 0.7rem;
+        width: 34px;
+        height: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resource-section">
+    <h2>Resources</h2>
+    <ul class="resource-list">
+      <li class="resource-item" tabindex="0">
+        <span class="resource-icon" role="img" aria-label="First aid kit">⛑️</span>
+        <a class="resource-link" href="/public/firstaid.html">First Aid Basics</a>
+      </li>
+      <li class="resource-item" tabindex="0">
+        <span class="resource-icon" role="img" aria-label="CPR hands">🤲</span>
+        <a class="resource-link" href="/public/cpr.html">CPR Instructions</a>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

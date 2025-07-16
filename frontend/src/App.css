@@ -1,0 +1,100 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: #d8f0f7;
+}
+
+.alert-bar {
+  background: #d8f0f7;
+  color: rgb(20, 27, 176);
+  padding: 1em;
+  text-align: center;
+}
+
+.main-header ul {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  padding: 1em;
+  margin: 0;
+  background: #d8f0f7;
+  justify-content: center;
+}
+
+.hero {
+  background:  #d8f0f7;
+  padding: 2em;
+  text-align: center;
+}
+
+.cta {
+  padding: 12px 24px;
+  background: #007b77;
+  color: white;
+  margin: 1em 0.5em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cta.secondary {
+  background: #42b6aa;
+}
+
+.quick-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  margin: 2em 1em;
+}
+
+.tile {
+  background: #e5fdf5;
+  padding: 1.25em;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.emergency-contacts {
+  background: #fff7e0;
+  margin: 2em auto;
+  padding: 1em;
+  border-radius: 6px;
+  width: 300px;
+  text-align: center;
+}
+
+.resources {
+  margin: 2em;
+  padding: 1em;
+  background: #edf2ff;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.location-services {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.feedback-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #002d2f;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #d0ebea;
+  padding: 1em;
+  text-align: center;
+  margin-top: 2em;
+}

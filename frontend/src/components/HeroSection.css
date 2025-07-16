@@ -1,0 +1,66 @@
+.hero {
+  background: linear-gradient(120deg, #d0ebea 60%, #e8f9fd 100%);
+  padding: 2.5em 1em 2em 1em;
+  text-align: center;
+  border-radius: 18px;
+  margin: 2em auto 1em auto;
+  max-width: 650px;
+  animation: fade-in 1s both 0.2s;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.4em;
+  color: #153446;
+  line-height: 1.2;
+}
+
+.hero-btn-group {
+  margin-top: 1.2em;
+}
+
+.cta {
+  padding: 12px 25px;
+  background: #007b77;
+  color: white;
+  margin: 0.5em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.08em;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+.cta.secondary {
+  background: #42b6aa;
+}
+
+.cta.pulse {
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(66,182,170, 0.2); }
+  70% { box-shadow: 0 0 0 12px rgba(66,182,170, 0.10); }
+  100% { box-shadow: 0 0 0 0 rgba(66,182,170, 0.2); }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* Additional styles for chatbot integration */
+.hero .EmergencyChatbot {
+  margin-top: 1.5em;
+  padding: 1em;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero .EmergencyChatbot button {
+  margin: 0.5em 0;
+}

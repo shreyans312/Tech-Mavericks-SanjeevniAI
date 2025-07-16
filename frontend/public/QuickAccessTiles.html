@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare Quick Access</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f9ff;
+        margin: 0;
+        padding: 2rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .tiles-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .tile {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 140px;
+      }
+      .tile:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+      .tile span {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .tile h3 {
+        margin: 0;
+        color: #2c3e50;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      .tile:nth-child(1) { border-top: 4px solid #e74c3c; }
+      .tile:nth-child(2) { border-top: 4px solid #3498db; }
+      .tile:nth-child(3) { border-top: 4px solid #2ecc71; }
+      .tile:nth-child(4) { border-top: 4px solid #f39c12; }
+      @media (max-width: 600px) {
+        .tiles-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tiles-container">
+      <div class="tile">
+        <span>🚑</span>
+        <h3>Request Ambulance</h3>
+      </div>
+      <div class="tile">
+        <span><a href="https://www.google.com/maps/search/hospitals+near+me/">🏥</a></span>
+        <h3>Nearest Hospitals</h3>
+      </div>
+      <div class="tile">
+        <span>🩺</span>
+        <h3>First Aid Guides</h3>
+      </div>
+      <div class="tile">
+        <span>💬</span>
+        <h3>Talk to Expert</h3>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

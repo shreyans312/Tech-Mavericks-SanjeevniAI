@@ -1,0 +1,56 @@
+.panic-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #ff3b3b;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 28px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  transition: transform .15s;
+}
+.panic-btn:hover { transform: scale(1.05); }
+
+.panic-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 999;
+}
+.panic-modal {
+  background:black;
+  max-width: 330px;
+  padding: 24px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.modal-actions { margin-top: 18px; display: flex; gap: 12px; justify-content: center; }
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.modal-actions button:first-child { background: #1e88e5; color: #fff; }
+.modal-actions button:last-child  { background: #eee; }
+
+.panic-status {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #fff9f9;
+  color: #b71c1c;
+  border-left: 6px solid #ff3b3b;
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 260px;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}

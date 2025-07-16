@@ -1,0 +1,151 @@
+/* Absolute top-right auth section */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #f7d8dc;
+  border-bottom: 1px solid #cde4f1;
+  padding-top: 10px; /* for spacing below absolute topbar */
+}
+
+/* OR for a fixed topbar (auth/logout area), use */
+.topbar-absolute {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+  z-index: 1000;
+  background-color: #690613; /* optional for visibility */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo img{
+  position:fixed;
+  top:0;
+  left: 180px;
+  height:9%;
+  
+}
+
+.coin img{
+  position :fixed;
+  top:17px;
+  right:250px;
+  height:4%;
+}
+
+.coin{
+  position:fixed;
+  top:13px;
+  right:210px;
+  font-size: 25px;
+  font-weight: 700;
+  color:white;
+
+}
+
+.welcome-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.logout-btn,
+.login-btn,
+.signup-btn {
+  border: none;
+  padding: 12.8px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+.login-btn {
+  background: transparent;
+  border: 1px solid #667eea;
+  color: #667eea;
+}
+.login-btn:hover {
+  background-color: #667eea;
+  color: white;
+}
+
+.signup-btn {
+  background-color: #667eea;
+  color: white;
+}
+.signup-btn:hover {
+  background-color: #5a6fd8;
+}
+
+/* Main navigation menu */
+.main-header {
+  background: #a70e13;
+  padding-top: 1px; /* Push down to make space for top-right buttons */
+  border-radius: 0 0 12px 12px;
+  animation: slide-down 700ms ease-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 100%;
+  padding: 0.25rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  background:#a70e13;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+.nav ul li a:hover {
+  background: #1194bc;
+  color: white;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .topbar-absolute {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}

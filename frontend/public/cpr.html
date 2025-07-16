@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency CPR Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #111;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .pulse-circle {
+      margin: 2rem auto;
+      width: 150px;
+      height: 150px;
+      background: #e53935;
+      border-radius: 50%;
+      animation: pulse 0s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.6; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    button {
+      padding: 1rem 2rem;
+      background: #1e88e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1565c0;
+    }
+    .instructions {
+      max-width: 600px;
+      margin: 1rem auto;
+      text-align: left;
+    }
+    .step {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🆘 Emergency CPR Guide (Hands-Only)</h1>
+  <div class="instructions">
+    <div class="step">1️⃣ Check responsiveness: Shake and shout “Are you okay?”</div>
+    <div class="step">2️⃣ If no response, call 📞 <strong>108 / 911 / 112</strong></div>
+    <div class="step">3️⃣ Check breathing. If not normal, begin CPR.</div>
+    <div class="step">4️⃣ Push <strong>hard and fast</strong> in the center of the chest.</div>
+    <div class="step">📏 5–6 cm deep | 🔁 100–120 times per minute</div>
+  </div>
+
+  <div class="pulse-circle" id="pulseCircle"></div>
+  <button id="startBtn">▶ Start CPR Guidance</button>
+
+  <!-- Beep sound for metronome -->
+  <audio id="metronome">
+    <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const pulse = document.getElementById("pulseCircle");
+    const metronome = document.getElementById("metronome");
+    const btn = document.getElementById("startBtn");
+
+    let interval = null;
+    let isRunning = false;
+    let speechQueue = [
+      "Check if the person is responsive. Shake and shout 'Are you okay?'",
+      "Call emergency services now. Dial 108 or 911.",
+      "Check if the person is breathing normally.",
+      "If not breathing, begin chest compressions now.",
+      "Push hard and fast in the center of the chest.",
+      "Follow the beat of the pulse. Do not stop until help arrives or the person wakes up."
+    ];
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
+
+    function playGuidance() {
+      // Speak initial steps one by one, spaced apart
+      let i = 0;
+      let stepInterval = setInterval(() => {
+        if (i < speechQueue.length) {
+          speak(speechQueue[i]);
+          i++;
+        } else {
+          clearInterval(stepInterval);
+        }
+      }, 5000); // 5 sec between steps
+    }
+
+    btn.onclick = () => {
+      if (isRunning) {
+        clearInterval(interval);
+        pulse.style.animation = "pulse 0s infinite";
+        btn.textContent = "▶ Start CPR Guidance";
+        isRunning = false;
+        speechSynthesis.cancel();
+      } else {
+        pulse.style.animation = "pulse 0.545s infinite"; // 110 BPM
+        interval = setInterval(() => {
+          metronome.currentTime = 0;
+          metronome.play();
+        }, 545);
+        btn.textContent = "⏹ Stop CPR Guidance";
+        isRunning = true;
+        playGuidance();
+      }
+    };
+  </script>
+</body>
+</html>
